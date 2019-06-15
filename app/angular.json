@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "project-tracker": {
+    "issue-tracker": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/project-tracker",
+            "outputPath": "dist/issue-tracker",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -57,18 +57,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "project-tracker:build"
+            "browserTarget": "issue-tracker:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "project-tracker:build:production"
+              "browserTarget": "issue-tracker:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "project-tracker:build"
+            "browserTarget": "issue-tracker:build"
           }
         },
         "test": {
@@ -102,7 +102,7 @@
         }
       }
     },
-    "project-tracker-e2e": {
+    "issue-tracker-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -111,11 +111,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "project-tracker:serve"
+            "devServerTarget": "issue-tracker:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "project-tracker:serve:production"
+              "devServerTarget": "issue-tracker:serve:production"
             }
           }
         },
@@ -131,5 +131,5 @@
       }
     }
   },
-  "defaultProject": "project-tracker"
+  "defaultProject": "issue-tracker"
 }
