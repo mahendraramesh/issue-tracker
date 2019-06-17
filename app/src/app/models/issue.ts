@@ -3,7 +3,7 @@ export default interface Issue {
     title: string,
     description: string,
     owner: string,
-    createdOn: string,
-    priority: string,
-    status: string
+    createdOn?: string,
+    priority?: string,
+    status?: string
 }

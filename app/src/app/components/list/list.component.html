@@ -1,0 +1,27 @@
+<button (click)="createIssue()">Add New Issue</button>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Title</th>
+    <th scope="col">Description</th>
+    <th scope="col">Owner</th>
+    <th scope="col">Status</th>
+    <th scope="col">Priority</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let issue of issues">
+    <th scope="row">{{ issue.number }}</th>
+    <td>
+      <a routerLink='/detail/{{issue.number}}'>{{ issue.title }}</a>
+    </td>
+    <td>{{ issue.description }}</td>
+    <td>{{ issue.owner }}</td>
+    <td>{{ issue.status }}</td>
+    <td>{{ issue.priority }}</td>
+    <td><button (click)="editIssue(issue.number)">Edit</button></td>
+  </tr>
+  </tbody>
+</table>

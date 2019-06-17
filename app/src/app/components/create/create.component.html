@@ -1,0 +1,15 @@
+<div>New Issue</div>
+
+<form>
+  <div><label for="">Title</label><input #issueTitle type="text" name="title"></div>
+  <div><label for="">description</label><input #issueDescription type="text"></div>
+  <div><label for="">Owner</label><input #issueOwner type="text"></div>
+  <div><label for="">Status</label><input #issueStatus type="text"></div>
+  <div><label for="">Priority</label><input #issuePriority type="text"></div>
+
+  <button (click)="submitCreateForm(issueTitle.value, issueDescription.value, issueOwner.value, issueStatus.value, issuePriority.value)">Create Issue</button>
+</form>
+
+<div *ngIf="showAlert">
+  <app-alert [issueTitle]="issueTitle.value"></app-alert>
+</div>

@@ -1,7 +1,7 @@
-<mat-toolbar color="primary">
-  <span>Project Tracker</span>
-</mat-toolbar>  
+<button (click)="redirectToHome()">Home</button>
 
-<div>
-  <router-outlet></router-outlet>
+<div [class]="'center'">
+  <span>Project Tracker</span>
 </div>
+
+<router-outlet></router-outlet>

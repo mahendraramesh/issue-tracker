@@ -1,30 +1,34 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import Issue from './models/issue';
+import { catchError, retry } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IssuesService {
+  uri = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 
   getIssues(): Observable<Issue[]> {
-    // return this.http.get('http://localhost:3000/issues');
-    let issue: Issue = {
-      title: "Integrate angular and node",
-      description: "Use Node apis in angular",
-      number: 1,
-      status: "Open",
-      priority: "Minor",
-      owner: "Mahendra",
-      createdOn: new Date().toDateString()
-    };
+    return this.http.get<Issue[]>(`${this.uri}/issues`)
+                .pipe(
+                  retry(3),
+                  catchError(this.errorHandler)
+                );
+  }
 
-    let issues: Issue[] = [issue];
+  getIssue(number: number): Observable<Issue> {
+    return this.http.get<Issue>(`${this.uri}/issues/${number}`);
+  }
 
-    return of(issues);
-    
+  createIssue(issue: Issue) {
+    this.http.post(`${this.uri}/issues/add`, issue);
+  }
+
+  errorHandler(error: HttpErrorResponse) {
+    return Observable.throw(error.message || "Unable to fetch issues");
   }
 }

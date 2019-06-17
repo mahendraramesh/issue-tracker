@@ -1,4 +1,4 @@
-# Issue Tracker
+# Issue Tracker - In Progress
 A Simple Tracker for stories and bugs. Built Using Angular 8, Node and MongoDB
 
 
