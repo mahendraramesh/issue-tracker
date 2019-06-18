@@ -1,4 +1,4 @@
-<button (click)="createIssue()">Add New Issue</button>
+<button class="btn btn-primary btn-sm" (click)="createIssue()">Add New Issue</button>
 
 <table class="table table-striped">
   <thead>
@@ -21,7 +21,7 @@
     <td>{{ issue.owner }}</td>
     <td>{{ issue.status }}</td>
     <td>{{ issue.priority }}</td>
-    <td><button (click)="editIssue(issue.number)">Edit</button></td>
+    <td><button class="btn btn-outline-primary btn-sm" (click)="editIssue(issue.number)">Edit</button></td>
   </tr>
   </tbody>
 </table>

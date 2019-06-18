@@ -22,8 +22,6 @@ export class DetailComponent implements OnInit {
       let id = parseInt(params.get('id'));
       this.getIssueDetail(id);
     });
-
-    
   }
 
   getIssueDetail(id: number) {

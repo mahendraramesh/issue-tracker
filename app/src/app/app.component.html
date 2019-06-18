@@ -1,7 +1,13 @@
-<button (click)="redirectToHome()">Home</button>
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/">Home</a>
+  </li>
+</ul>
 
 <div [class]="'center'">
-  <span>Project Tracker</span>
+  <h3>Project Tracker</h3>
 </div>
 
-<router-outlet></router-outlet>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

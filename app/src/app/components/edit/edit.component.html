@@ -1,3 +1,25 @@
-<p>
-  edit works
-</p>
+<h6>Update Issue Details</h6>
+
+<form>
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" class="form-control" id="title" placeholder="Enter Title" [value]="issue.title">
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input type="text" class="form-control" id="description" placeholder="Enter Description" [value]="issue.description">
+  </div>
+  <div class="form-group">
+    <label for="owner">Owner</label>
+    <input type="text" class="form-control" id="owner" placeholder="Enter Owner" [value]="issue.owner">
+  </div>
+  <div class="form-group">
+    <label for="status">Status</label>
+    <input type="text" class="form-control" id="status" placeholder="Enter Status" [value]="issue.status">
+  </div>
+  <div class="form-group">
+    <label for="priority">Priority</label>
+    <input type="text" class="form-control" id="priority" placeholder="Enter Priority" [value]="issue.priority">
+  </div>
+  <button type="submit" class="btn btn-primary">Update Issue</button>
+</form>
