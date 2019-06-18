@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AlertComponent } from './components/alert/alert.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { DetailComponent } from './components/detail/detail.component';
+import { IssuePriorityPipe } from './pipes/issue-priority.pipe';
+import { PriorityDirective } from './directives/priority.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { DetailComponent } from './components/detail/detail.component';
     EditComponent,
     AlertComponent,
     PageNotFoundComponent,
-    DetailComponent
+    DetailComponent,
+    IssuePriorityPipe,
+    PriorityDirective
   ],
   imports: [
     BrowserModule,

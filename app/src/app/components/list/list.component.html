@@ -20,7 +20,7 @@
     <td>{{ issue.description }}</td>
     <td>{{ issue.owner }}</td>
     <td>{{ issue.status }}</td>
-    <td>{{ issue.priority }}</td>
+    <td [appPriority]="issue.priority">{{ issue.priority | issuePriority }}</td>
     <td><button class="btn btn-outline-primary btn-sm" (click)="editIssue(issue.number)">Edit</button></td>
   </tr>
   </tbody>
